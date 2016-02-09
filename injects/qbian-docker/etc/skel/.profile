@@ -7,4 +7,3 @@ if [ "$BASH" ]; then
 fi
 
 mesg n
-source ~/.nvm/nvm.sh

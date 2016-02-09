@@ -13,7 +13,7 @@ wlan0=$(cat /sys/class/net/wlan0/operstate); # up | down
 
 if [ "$COMMAND" == "start" ];then
 	echo "Starting docker ui"
-	# docker run -d docker_ui
+	docker start qbian-docker-ui-init
 fi
 
 if [ "$COMMAND" == "reload" ];then

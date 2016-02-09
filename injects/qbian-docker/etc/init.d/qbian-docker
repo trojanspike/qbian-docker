@@ -30,6 +30,6 @@ case "$1" in
         ;;
 esac
 
-# update-rc.d qbian-c9 defaults
+# update-rc.d qbian-docker defaults
 #
-# update-rc.d -f qbian-c9 remove
+# update-rc.d -f qbian-docker remove

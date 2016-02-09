@@ -9,4 +9,7 @@ apt-get update && apt-get -f install -y && apt-get upgrade -y && apt-get -f inst
 echo "Editing /boot/config.txt - note device is required" && \
 echo -e "dtparam=i2c1=on\ndtparam=i2c_arm=on\ndevice_tree=" >> /boot/config.txt && \
 /root/rpi-serial-console/rpi-serial-console disable && \
-echo "Complete Device Provisions"
+## install dockerui & start in daemon mode
+docker pull hypriot/rpi-dockerui && \
+docker run -d -p 9000:9000 --privileged --name qbian-docker-ui-init -v /var/run/docker.sock:/var/run/docker.sock hypriot/rpi-dockerui && \
+echo "Complete Device Provisions : Please reboot"

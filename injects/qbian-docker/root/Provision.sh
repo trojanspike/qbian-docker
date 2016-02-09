@@ -10,13 +10,11 @@ chmod +x /root/_Provisioning/*
 IS_DEVICE=$1
 DEBIAN_FRONTEND=noninteractive
 function provision_qemu(){
-	echo ""
-	#/root/_Provisioning/provision-qemu
+	/root/_Provisioning/provision-qemu
 }
 
 function provision_device(){
-	echo ""
-	#/root/_Provisioning/provision-device
+	/root/_Provisioning/provision-device
 }
 
 ### Run some logic or run a script
