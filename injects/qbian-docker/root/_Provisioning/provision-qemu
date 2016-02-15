@@ -45,8 +45,8 @@ chmod +x /etc/init.d/* && \
 ##Qbian Server examples
 /bin/su - $USER -c "git clone https://github.com/trojanspike/qbian-server.git ~/Server" && \
 ## Installer docker
-curl -sSL http://downloads.hypriot.com/docker-hypriot_1.8.2-1_armhf.deb > /tmp/docker-hypriot_1.8.2-1_armhf.deb && \
-dpkg -i /tmp/docker-hypriot_1.8.2-1_armhf.deb && \
+curl -sSL -o docker-hypriot_1.8.2-1_armhf.deb http://downloads.hypriot.com/docker-hypriot_1.8.2-1_armhf.deb && \
+dpkg -i docker-hypriot_1.8.2-1_armhf.deb && \
 gpasswd -a $USER docker && \
 update-rc.d qbian-docker defaults && \
 passwd root <<EFO
