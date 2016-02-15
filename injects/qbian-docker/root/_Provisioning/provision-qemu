@@ -22,9 +22,6 @@ update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.6 20 && \
 update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50 && \
 update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.6 20 && \
 update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50 && \
-##
-git clone https://github.com/lurch/rpi-serial-console.git && \
-##
 echo -e "i2c-bcm2708\ni2c-dev" >> /etc/modules && \
 echo -e "\n# i2c\nblacklist spi-bcm2708\nblacklist i2c-bcm2708" >> /etc/modprobe.d/fbdev-blacklist.conf && \
 sed -i "s/blacklist/#blacklist/g" /etc/modprobe.d/fbdev-blacklist.conf && \
@@ -40,14 +37,9 @@ ln -s /usr/sbin/i2cdetect /home/$USER/bin/i2cdetect && \
 ln -s /usr/sbin/i2cdump /home/$USER/bin/i2cdump && \
 ln -s /usr/sbin/i2cget /home/$USER/bin/i2cget && \
 ln -s /usr/sbin/i2cset /home/$USER/bin/i2cset && \
-git clone https://github.com/lurch/rpi-serial-console.git && \
 chmod +x /etc/init.d/* && \
 ##Qbian Server examples
 /bin/su - $USER -c "git clone https://github.com/trojanspike/qbian-server.git ~/Server" && \
-## Installer docker
-curl -sSL -o docker-hypriot_1.8.2-1_armhf.deb http://downloads.hypriot.com/docker-hypriot_1.8.2-1_armhf.deb && \
-dpkg -i docker-hypriot_1.8.2-1_armhf.deb && \
-gpasswd -a $USER docker && \
 update-rc.d qbian-docker defaults && \
 passwd root <<EFO
 $NEW_ROOT_PASS
