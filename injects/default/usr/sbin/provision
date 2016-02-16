@@ -17,3 +17,4 @@ else
     echo "$NAME provisioned from qemu $(cat /qbianProvision/$NAME-qemu)"
   fi
 fi
+
